@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+    {% block login %}
+                        <section id="footer">
+                            <div class="inner">
+                                <h2 class="major">Login</h2>
+                                <form method="post" action="{% url 'polls:login' %}">{% csrf_token %} 
+                                    <div class="field">
+                                        <input type="text" placeholder="Usuário" name="username" id="name" required autofocus>
+                                    </div>
+                                    <div class="field">
+                                        <input type="password" placeholder="Senha" name="password" id="passw" required autofocus>
+                                    </div>
+                                        <button type="submit">LOGIN</button>
+                                </form>
+                            </div>
+                        </section>
+    {% endblock %}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+
+    <head>
+        <title>Login</title>
+        <meta charset="UTF-8" />  
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="shortcut icon" href="{% static 'images/icone.png' %}">  
+        <script src="{% static 'assets/js/jslogin.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'assets/css/csslogin.css' %}" />
+        <link rel="stylesheet" href="{% static 'assets/css/cssmenu.css' %}" />
+        <script src="{% static 'assets/js/ie/html5shiv.js' %}"></script>
+    </head>
+
+<body>
+    <header id="header" class="alt">
+            <nav>
+                <a href="#menu" onclick="apaga()">Menu</a>
+            </nav>
+    </header>
+        <nav id="menu">
+            <div class="inner">
+                <h2>Menu</h2>
+                <ul class="links">
+                    <li><a href="http://127.0.0.1:8000">Home</a></li>
+                    <li><a href="generic.html">Acervo</a></li>
+                    <li><a href="elements.html">Ajuda</a></li>
+                    <li><a href="http://127.0.0.1:8000/login">Login</a></li>
+                    <li><a href="http://127.0.0.1:8000/register">Sign Up</a></li>
+                    <li><a href="http://127.0.0.1:8000/contact">Contato</a></li>
+                </ul>
+                <a href="#" class="close">Close</a>
+            </div>
+        </nav>
+    
+    <div class="login-page">
+        <div class="form">
+        <form class="login-form">
+            <input type="text" placeholder="Usuário" required autofocus>
+            <input type="password" placeholder="Senha" required autofocus>
+            <button>login</button>
+            <p class="message">Not registered? <a href="#">Create an account</a></p>
+        </form>
+        </div>
+    </div>
+
+    <script src="{% static 'assets/js/skel.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.scrollex.min.js' %}"></script>
+    <script src="{% static 'assets/js/util.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+
+</html>

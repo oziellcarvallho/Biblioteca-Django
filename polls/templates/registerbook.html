@@ -1,0 +1,49 @@
+{% extends "base.html" %} 
+    {% block corpo %}
+    <section id="footer">
+            <div style="margin: 200px">
+                <h2 class="major">Cadastro de Livros</h2>
+                <form method="post" action="">{% csrf_token %}
+                    
+                    <div class="col-sm-6">
+
+                    <div class="field" id="fieldl">
+                        <label>Nome do Livro
+                            <input placeholder="" type="text" tabindex="1" name="name_book" id="n" required autofocus>
+                        </label>
+                    </div>
+                    <div class="field" id="fieldl">
+                        <label>Nome do Autor
+                            <input placeholder="" type="text" tabindex="2" name="author_book" id="na" required autofocus>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label>Assunto
+                            <input placeholder="" type="text" tabindex="3" name="subject_matter" id="sm" required autofocus>
+                        </label>
+                    </div>
+                    </div>
+                    <div class="col-sm-6">
+                    <div class="field">
+                        <label>Ano
+                            <input  placeholder="0000" type="number" tabindex="4" name="year" id="a" required autofocus>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label>Edição
+                            <input  placeholder="" type="text" tabindex="5" name="edition" id="e" required autofocus>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label>Editora
+                            <input  placeholder="" type="text" tabindex="6" name="publishing_company" id="ed" required autofocus>
+                        </label>
+                    </div>
+                    </div>
+                <div class="col-sm-12">
+                    <button type="submit">CADASTRAR</button>
+                </div>
+                </form>
+            </div>
+        </section>
+    {% endblock %}

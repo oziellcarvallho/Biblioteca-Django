@@ -1,0 +1,90 @@
+{% extends "base.html" %} 
+    {% block corpo %}
+    <section id="footer">
+            <div style="margin: 200px">
+                <h2 class="major">Cadastro de Bibliotecario</h2></br>
+                <form method="post" action="">{% csrf_token %}
+                       
+                    <div class="col-sm-6">
+                        
+                    <div class="field" id="fieldl">
+                        <label>Nome
+                            <input placeholder="Nome Completo" type="text" tabindex="1" name="name_usr" id="n" required autofocus>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label>Email
+                            <input placeholder="Exemplo@exemplo.com" type="email" tabindex="2" name="email" required autofocus>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label>CPF
+                            <input placeholder="CPF" type="text" tabindex="3" name="cpf_usr" id="cp" required autofocus>
+                        </label>
+                    </div>
+                    <div class="field">
+                            <label>Usuário
+                                <input placeholder="" type="text" tabindex="5" name="user" required autofocus>
+                        </label>
+                    </div>
+                    <div class="field">
+                        
+                        <label>Senha
+                            <input placeholder="******" type="password" tabindex="4" name="password_librarian" required autofocus>
+                        </label>
+                    </div>
+                    
+                    <div class="field">
+                        <label>Telefone
+                            <input placeholder="(00)00000-0000" type="tel" tabindex="6" name="phone" required autofocus>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label>Data de Nascimento
+                            <input placeholder="DD/MM/AAAA" type="date" tabindex="7" name="birth" required autofocus>
+                        </label>
+                    </div>
+
+                </div>
+                <div class="col-sm-6">
+
+                    <div class="field">
+                        <label>CEP
+                            <input  placeholder="00000-000" type="text" tabindex="8" name="postcard" id="r" required autofocus>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label>Rua
+                            <input  placeholder="" type="text" tabindex="9" name="street" id="r" required autofocus>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label>Número
+                            <input  placeholder="" type="number" tabindex="10" name="num" id="nu" required autofocus>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label>Bairro
+                            <input  placeholder="" type="text" tabindex="11" name="neighborhood" id="b" required autofocus>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label>Cidade
+                            <input  placeholder="" type="text" tabindex="12" name="city" id="c" required autofocus>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label>Estado
+                            <input  placeholder="" type="text" tabindex="13" name="state" id="s" required autofocus>
+                        </label>
+                    </div>
+
+                 </div>
+                 <div class="col-sm-12">
+                    <button type="submit">CADASTRAR</button>
+                </div>
+                
+                </form>
+            </div>
+        </section>
+    {% endblock %}
