@@ -144,7 +144,7 @@ STATICFILES_DIRS = [
     '/../polls/static/assets/images/pic11.jpg',
     '/../polls/static/assets/images/select-arrow.jpg',
     '/../polls/static/assets/images/icone.jpg',
-    '/../polls/static/assets/images/icone.png',
+    '/../polls/static/assets/images/icon.png',
     '/../polls/static/assets/images/bg.jpg',
     '/../polls/static/assets/css/demo.css',
     '/../polls/static/assets/css/csslogin.css',
