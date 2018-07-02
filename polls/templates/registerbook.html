@@ -1,49 +1,116 @@
 {% extends "base.html" %} 
+{% load staticfiles %}
     {% block corpo %}
-    <section id="footer">
-            <div style="margin: 200px">
-                <h2 class="major">Cadastro de Livros</h2>
-                <form method="post" action="">{% csrf_token %}
-                    
-                    <div class="col-sm-6">
 
-                    <div class="field" id="fieldl">
-                        <label>Nome do Livro
-                            <input placeholder="" type="text" tabindex="1" name="name_book" id="n" required autofocus>
-                        </label>
-                    </div>
-                    <div class="field" id="fieldl">
-                        <label>Nome do Autor
-                            <input placeholder="" type="text" tabindex="2" name="author_book" id="na" required autofocus>
-                        </label>
-                    </div>
-                    <div class="field">
-                        <label>Assunto
-                            <input placeholder="" type="text" tabindex="3" name="subject_matter" id="sm" required autofocus>
-                        </label>
-                    </div>
-                    </div>
-                    <div class="col-sm-6">
-                    <div class="field">
-                        <label>Ano
-                            <input  placeholder="0000" type="number" tabindex="4" name="year" id="a" required autofocus>
-                        </label>
-                    </div>
-                    <div class="field">
-                        <label>Edição
-                            <input  placeholder="" type="text" tabindex="5" name="edition" id="e" required autofocus>
-                        </label>
-                    </div>
-                    <div class="field">
-                        <label>Editora
-                            <input  placeholder="" type="text" tabindex="6" name="publishing_company" id="ed" required autofocus>
-                        </label>
-                    </div>
-                    </div>
-                <div class="col-sm-12">
-                    <button type="submit">CADASTRAR</button>
-                </div>
-                </form>
+    <form method="POST">
+
+    <div>
+
+        <div class="left-side">
+
+            <div>
+                <label>Título do Livro</label><br>
+                <input type="text" name="text" />
             </div>
-        </section>
-    {% endblock %}
+
+            <div>
+                <label>Autor</label><br>
+                <input type="text" name="text"/>
+            </div>
+
+            <div>
+
+                <label>Contact phone:</label>
+
+                <input type="text" name="phone" />
+
+            </div>
+
+
+
+            <div class="mdl-selectfield--floating-label">
+
+                <label>Education:</label>
+
+                <select name="education">
+
+                    <option value=""></option>
+
+                    <option value="school">High school</option>
+
+                    <option value="bachelor">Bachelor</option>
+
+                    <option value="master">Master</option>
+
+                    <option value="phd">PhD</option>
+
+                </select>
+
+            </div>
+
+
+
+            <fieldset>
+
+                <legend><b>Sex</b></legend>
+
+                <label>
+
+                  <input type="radio" id="list-option-1" name="sex" value="male" /> Male
+
+                </label>
+
+
+
+                <label>
+
+                  <input type="radio" id="list-option-2" name="sex" value="female" /> Female
+
+                </label>
+
+
+
+                <label>
+
+                  <input type="radio" id="list-option-3" name="sex" value="notsure" /> Yes, please
+
+                </label>
+
+            </fieldset>
+
+            <fieldset>
+
+                <legend><b>Strong sides</b></legend>
+
+                <label>
+
+                    <input type="checkbox" id="list-checkbox-1" checked />
+
+                    <span>Will code for food</span>
+
+                </label>
+
+                <label>
+
+                    <input type="checkbox" id="list-checkbox-2" checked />
+
+                    <span>Hate vacations</span>
+
+                </label>
+
+            </fieldset>
+
+        </div>
+
+    </div>
+
+    <div class="toolbar-section">
+
+        <button type="submit" name="submit">OK</button>
+
+        <button type="reset" name="reset">Cancelar</button>
+
+    </div>
+
+    </form>
+{% endblock %}
