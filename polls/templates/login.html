@@ -1,73 +1,41 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
 {% load staticfiles %}
-<html lang="pt-br">
-<head>
-	<title>Online Library System</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">	
-	<link rel="icon" type="image/png" href="{% static 'assets/images/icon.png' %}"/>
-	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/login/bootstrap.min.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/login/icon-font.min.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/login/animate.css' %}">	
-	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/login/hamburgers.min.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/login/animsition.min.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/login/select2.min.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/login/daterangepicker.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/login/util.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/login/main.css' %}">
-	
-</head>
-<body>
-	
-	<div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100 p-t-50 p-b-90">
-				<form method="post" class="login100-form validate-form flex-sb flex-w" action="{% url 'polls:login' %}">{% csrf_token %}
-					<span class="login100-form-title p-b-51">
-						Login
-					</span>
-						
-						<div class="wrap-input100 validate-input m-b-16" data-validate = "Nome de Usuário é Obrigatório">
-							<input class="input100" type="text" placeholder="Usuário" name="username" id="name">
-							<span class="focus-input100"></span>
-						</div>
-						
-						
-						<div class="wrap-input100 validate-input m-b-16" data-validate = "Senha é Obrigatório">
-							<input class="input100" type="password" placeholder="Senha" name="password" id="passw">
-							<span class="focus-input100"></span>
-						</div>
-						
-						<div class="flex-sb-m w-full p-t-3 p-b-24">
-							<div>
-								<a href="#" class="txt1">
-									Esqueceu sua Senha?
-								</a>
-							</div>
-						</div>
-
-						<div class="container-login100-form-btn m-t-17">
-							<button class="login100-form-btn" type="submit">
-								Login
-							</button>
-						</div>
-				</form>
+	{% block login %}
+	<style>
+		.demo-card-wide.mdl-card {
+			width: 512px;
+		}
+		.demo-card-wide > .mdl-card__title {
+			color: #fff;
+			height: 176px;
+			background: url('../assets/demos/welcome_card.jpg') center / cover;
+		}
+		.demo-card-wide > .mdl-card__menu {
+			color: #fff;
+		}
+	</style>
+		
+	<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+		<div class="mdl-card__title">
+			<h2 class="mdl-card__title-text">Login</h2>
+		</div>
+		<div class="mdl-card__supporting-text">
+			<form method="post" action="{% url 'polls:login' %}">{% csrf_token %}
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<input class="mdl-textfield__input" type="text" name="username" id="name">
+				<label class="mdl-textfield__label" for="sample3">Usuário</label>
 			</div>
+				
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<input class="mdl-textfield__input" type="password" name="password" id="passw">
+				<label class="mdl-textfield__label" for="sample3">Senha</label>
+			</div>
+			<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+				Login
+			</button>
+			</form>		
 		</div>
 	</div>
-	
 
-	<div id="dropDownSelect1"></div>
-	
-	<script src="{% static 'assets/js/login/jquery-3.2.1.min.js' %}"></script>
-	<script src="{% static 'assets/js/login/animsition.min.js' %}"></script>
-	<script src="{% static 'assets/js/login/popper.js' %}"></script>
-	<script src="{% static 'assets/js/login/bootstrap.min.js' %}"></script>
-	<script src="{% static 'assets/js/login/select2.min.js' %}"></script>
-	<script src="{% static 'assets/js/login/moment.min.js' %}"></script>
-	<script src="{% static 'assets/js/login/daterangepicker.js' %}"></script>
-	<script src="{% static 'assets/js/login/countdowntime.js' %}"></script>
-	<script src="{% static 'assets/js/login/main.js' %}"></script>
 
-</body>
-</html>
+	{% endblock %}
