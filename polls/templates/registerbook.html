@@ -1,116 +1,64 @@
 {% extends "base.html" %} 
 {% load staticfiles %}
     {% block corpo %}
+    <section class="section--center mdl-grid mdl-grid--no-spacing">
+        <div class="mdl-cell mdl-cell--12-col">
+            <h4>Cadastro de Livros</h4>
+            <form method="post" action="">{% csrf_token %}
+                    <form action="#">
+                            <div class="mdl-textfield mdl-js-textfield">
+                              <input class="mdl-textfield__input" type="text" tabindex="1" name="name_book" id="n">
+                              <label class="mdl-textfield__label" for="sample1">Nome do Livro</label>
+                            </div>
+                        </form>
+            
+                        <form action="#">
+                            <div class="mdl-textfield mdl-js-textfield">
+                              <input class="mdl-textfield__input" type="text" tabindex="2" name="author_book" id="na">
+                              <label class="mdl-textfield__label" for="sample1">Nome do Autor</label>
+                            </div>
+                        </form>
+            
+                        <form action="#">
+                            <div class="mdl-textfield mdl-js-textfield">
+                              <input class="mdl-textfield__input" type="text" tabindex="3" name="subject_matter" id="sm">
+                              <label class="mdl-textfield__label" for="sample1">Assunto</label>
+                            </div>
+                        </form>
+            
+                        <form action="#">
+                            <div class="mdl-textfield mdl-js-textfield">
+                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" tabindex="4" name="year" id="a">
+                            <label class="mdl-textfield__label" for="sample2">Ano</label>
+                            <span class="mdl-textfield__error">Apenas Numeros!</span>
+                            </div>
+                        </form>
+              
+                        <form action="#">
+                            <div class="mdl-textfield mdl-js-textfield">
+                              <input class="mdl-textfield__input" type="text" tabindex="5" name="edition" id="e">
+                              <label class="mdl-textfield__label" for="sample1">Edição</label>
+                            </div>
+                        </form>
+            
+                        <form action="#">
+                            <div class="mdl-textfield mdl-js-textfield">
+                              <input class="mdl-textfield__input" type="text" tabindex="6" name="publishing_company" id="ed">
+                              <label class="mdl-textfield__label" for="sample1">Editora</label>
+                            </div>
+                        </form>    
+                        <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                                Cadastrar
+                        </button>
+            </form>              
 
-    <form method="POST">
-
-    <div>
-
-        <div class="left-side">
-
-            <div>
-                <label>Título do Livro</label><br>
-                <input type="text" name="text" />
-            </div>
-
-            <div>
-                <label>Autor</label><br>
-                <input type="text" name="text"/>
-            </div>
-
-            <div>
-
-                <label>Contact phone:</label>
-
-                <input type="text" name="phone" />
-
-            </div>
-
-
-
-            <div class="mdl-selectfield--floating-label">
-
-                <label>Education:</label>
-
-                <select name="education">
-
-                    <option value=""></option>
-
-                    <option value="school">High school</option>
-
-                    <option value="bachelor">Bachelor</option>
-
-                    <option value="master">Master</option>
-
-                    <option value="phd">PhD</option>
-
-                </select>
-
-            </div>
-
-
-
-            <fieldset>
-
-                <legend><b>Sex</b></legend>
-
-                <label>
-
-                  <input type="radio" id="list-option-1" name="sex" value="male" /> Male
-
-                </label>
-
-
-
-                <label>
-
-                  <input type="radio" id="list-option-2" name="sex" value="female" /> Female
-
-                </label>
-
-
-
-                <label>
-
-                  <input type="radio" id="list-option-3" name="sex" value="notsure" /> Yes, please
-
-                </label>
-
-            </fieldset>
-
-            <fieldset>
-
-                <legend><b>Strong sides</b></legend>
-
-                <label>
-
-                    <input type="checkbox" id="list-checkbox-1" checked />
-
-                    <span>Will code for food</span>
-
-                </label>
-
-                <label>
-
-                    <input type="checkbox" id="list-checkbox-2" checked />
-
-                    <span>Hate vacations</span>
-
-                </label>
-
-            </fieldset>
-
+            
+           
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                Cancelar
+            </button>
         </div>
-
-    </div>
-
-    <div class="toolbar-section">
-
-        <button type="submit" name="submit">OK</button>
-
-        <button type="reset" name="reset">Cancelar</button>
-
-    </div>
-
-    </form>
-{% endblock %}
+      </section>
+    
+  
+    {% endblock %}

@@ -13,10 +13,10 @@
             <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
               <h5>Informações</h5>
               Autor:  {{b.author_book}}<br/>
-			  Assunto:  {{b.subject_matter}}<br/>
-			  Ano:  {{b.year}}<br/>
-			  Edição:  {{b.edition}}<br/>										
-			  Editora:  {{b.publishing_company}}<br/>
+			        Assunto:  {{b.subject_matter}}<br/>
+			        Ano:  {{b.year}}<br/>
+			        Edição:  {{b.edition}}<br/>										
+			        Editora:  {{b.publishing_company}}<br/>
             </div>
                       
           </div>
@@ -27,4 +27,5 @@
         </div>
       </section>
       {% endfor %}
+      <a href="http://127.0.0.1:8000/registerbook" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">Adicionar</a>  
     {% endblock %}
