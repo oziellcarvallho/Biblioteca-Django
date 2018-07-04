@@ -50,57 +50,51 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=pt-br">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="{% static 'assets/css/material.min.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/card.css' %}" />
 
     <style>
-    #view-source {
-      position: fixed;
-      display: block;
-      right: 0;
-      bottom: 0;
-      margin-right: 40px;
-      margin-bottom: 40px;
-      z-index: 900;
-    }
+      .demo-layout-transparent {
+        background: url(https://lh4.googleusercontent.com/-XplyTa1Za-I/VMSgIyAYkHI/AAAAAAAADxM/oL-rD6VP4ts/w1184-h666/Android-Lollipop-wallpapers-Google-Now-Wallpaper-2.png) center / cover;
+      }
+      .demo-layout-transparent .mdl-layout__header,
+      .demo-layout-transparent .mdl-layout__drawer-button {
+        /* This background is dark, so we set text to white. Use 87% black instead if
+        your background is light. */
+        color: white;
+      }
     </style>
   </head>
-  <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        {% block login %}  
-      <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
-        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-        </div>
-        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-          <h3>Online Library System</h3>
-        </div>
-        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-        </div>
-        <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
-          <a href="http://127.0.0.1:8000" class="mdl-layout__tab">Home</a>
-          <a href="http://127.0.0.1:8000/collection" class="mdl-layout__tab">Livros</a>
-          <a href="http://127.0.0.1:8000/contact" class="mdl-layout__tab">Contato</a>
-        </div>
-      </header>
-      <main class="mdl-layout__content">
-        <div class="mdl-layout__tab-panel is-active" id="overview">
-        {% block corpo %}
-			  {% endblock %}
-        </div>
-        
-        <footer class="mdl-mini-footer">
-          <div class="mdl-mini-footer__left-section">
-            <div class="mdl-logo">Title</div>
-            <ul class="mdl-mini-footer__link-list">
-              <li><a href="#">Help</a></li>
-              <li><a href="#">Privacy & Terms</a></li>
-            </ul>
+  <body>
+      <div class="demo-layout-transparent mdl-layout mdl-js-layout">
+          <header class="mdl-layout__header mdl-layout__header--transparent">
+            <div class="mdl-layout__header-row">
+              <!-- Title -->
+              <span class="mdl-layout-title">Online Library System</span>
+              <!-- Add spacer, to align navigation to the right -->
+              <div class="mdl-layout-spacer"></div>
+              <!-- Navigation -->
+              <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="http://127.0.0.1:8000">Home</a>
+                <a class="mdl-navigation__link" href="http://127.0.0.1:8000/collection">Livros</a>
+                <a class="mdl-navigation__link" href="http://127.0.0.1:8000/contact">Contato</a>
+                <a class="mdl-navigation__link" href="http://127.0.0.1:8000/logout_view">Sair</a>
+              </nav>
+            </div>
+          </header>
+          <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">OLS</span>
+            <nav class="mdl-navigation">
+              <a class="mdl-navigation__link" href="">Link</a>
+              <a class="mdl-navigation__link" href="">Link</a>
+              <a class="mdl-navigation__link" href="">Link</a>
+              <a class="mdl-navigation__link" href="">Link</a>
+            </nav>
           </div>
-        </footer>
-
-      </main>
-    {% endblock %}  
-    </div>
-    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+          <main class="mdl-layout__content">
+              {% block corpo %}
+              {% endblock %}
+          </main>
+        </div>
+      <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>        
   </body>
 </html>
