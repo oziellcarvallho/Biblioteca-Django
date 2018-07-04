@@ -2,7 +2,7 @@
 {% load staticfiles %}
     {% block corpo %}
     {% for b in bl %}
-    <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+    <section class="mdl-grid">
         <div class="mdl-card mdl-cell mdl-cell--12-col">
           <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
             <h4 class="mdl-cell mdl-cell--12-col">{{b.name_book}}</h4>
@@ -21,8 +21,8 @@
                       
           </div>
           <div class="mdl-card__actions">
-            <a href="#" class="mdl-button">Excluir</a>
-            <a href="#" class="mdl-button">Alterar</a>
+            <a href="#" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Excluir</a>
+            <a href="#" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Alterar</a>
           </div>
         </div>
       </section>
