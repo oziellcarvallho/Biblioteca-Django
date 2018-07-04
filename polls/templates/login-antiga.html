@@ -1,17 +1,37 @@
-{% extends "base.html" %}
-    {% block login %}
-                        <section id="footer">
-                            <div class="inner">
-                                <h2 class="major">Login</h2>
-                                <form method="post" action="{% url 'polls:login' %}">{% csrf_token %} 
-                                    <div class="field">
-                                        <input type="text" placeholder="Usuário" name="username" id="name" required autofocus>
-                                    </div>
-                                    <div class="field">
-                                        <input type="password" placeholder="Senha" name="password" id="passw" required autofocus>
-                                    </div>
-                                        <button type="submit">LOGIN</button>
-                                </form>
-                            </div>
-                        </section>
-    {% endblock %}
+<!DOCTYPE HTML>
+{% load staticfiles %}
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" href="{% static 'assets/css/css_login.css' %}" />
+		<script src="{% static 'assets/js/js_login.js'}"></script>
+		<link rel="icon" href="{% static 'assets/images/icon.ico' %}" type="image/x-icon"/>
+		<title>Login</title>
+	</head>
+
+	<hgroup>
+		<h1>Online Library System</h1>
+	</hgroup>
+	<form method="POST" action="{% url 'polls:login' %}">{% csrf_token %}
+		<div class="group">
+			<input type="text" placeholder="Usuário" name="username"><span class="highlight"></span><span class="bar"></span>
+		</div>
+		<div class="group">
+			<input type="password" placeholder="Senha" name="password"><span class="highlight"></span><span class="bar"></span>
+		</div>
+		<button type="submit" class="button buttonBlue">LOGIN
+			<div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+		</button>
+	</form>
+
+	{% for message in messages %}
+
+	<div class="alert alert-success">
+		<a class="close" href="#" data-dismiss="alert">×</a>
+
+		{{ message }}
+
+	</div>
+	{% endfor %}
+
+</html>
