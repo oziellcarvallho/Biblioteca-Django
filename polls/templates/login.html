@@ -1,41 +1,37 @@
-{% extends "base.html" %}
+<!DOCTYPE HTML>
 {% load staticfiles %}
-	{% block login %}
-	<style>
-		.demo-card-wide.mdl-card {
-			width: 512px;
-		}
-		.demo-card-wide > .mdl-card__title {
-			color: #fff;
-			height: 176px;
-			background: url('../assets/demos/welcome_card.jpg') center / cover;
-		}
-		.demo-card-wide > .mdl-card__menu {
-			color: #fff;
-		}
-	</style>
-		
-	<div class="demo-card-wide mdl-card mdl-shadow--2dp">
-		<div class="mdl-card__title">
-			<h2 class="mdl-card__title-text">Login</h2>
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" href="{% static 'assets/css/css_login.css' %}" />
+		<script src="{% static 'assets/js/js_login.js'}"></script>
+		<link rel="icon" href="{% static 'assets/images/icon.ico' %}" type="image/x-icon"/>
+		<title>Login</title>
+	</head>
+
+	<hgroup>
+		<h1>Online Library System</h1>
+	</hgroup>
+	<form method="POST" action="{% url 'polls:login' %}">{% csrf_token %}
+		<div class="group">
+			<input type="text" placeholder="Usuário" name="username"><span class="highlight"></span><span class="bar"></span>
 		</div>
-		<div class="mdl-card__supporting-text">
-			<form method="post" action="{% url 'polls:login' %}">{% csrf_token %}
-			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				<input class="mdl-textfield__input" type="text" name="username" id="name">
-				<label class="mdl-textfield__label" for="sample3">Usuário</label>
-			</div>
-				
-			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				<input class="mdl-textfield__input" type="password" name="password" id="passw">
-				<label class="mdl-textfield__label" for="sample3">Senha</label>
-			</div>
-			<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-				Login
-			</button>
-			</form>		
+		<div class="group">
+			<input type="password" placeholder="Senha" name="password"><span class="highlight"></span><span class="bar"></span>
 		</div>
+		<button type="submit" class="button buttonBlue">LOGIN
+			<div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+		</button>
+	</form>
+
+	{% for message in messages %}
+
+	<div class="alert alert-success">
+		<a class="close" href="#" data-dismiss="alert">×</a>
+
+		{{ message }}
+
 	</div>
+	{% endfor %}
 
-
-	{% endblock %}
+</html>
