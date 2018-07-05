@@ -1,31 +1,34 @@
 {% extends "base.html" %} 
 {% load staticfiles %}
     {% block corpo %}
-    {% for b in bl %}
-    <section class="mdl-grid">
-        <div class="mdl-card mdl-cell mdl-cell--12-col">
-          <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
-            <h4 class="mdl-card__title-text">{{b.name_book}}</h4>
-            
-            <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-              <div class="section__circle-container__circle mdl-color--primary"></div>
-            </div>
-            <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-              <h5>Informações</h5>
-              Autor:  {{b.author_book}}<br/>
-			        Assunto:  {{b.subject_matter}}<br/>
-			        Ano:  {{b.year}}<br/>
-			        Edição:  {{b.edition}}<br/>										
-			        Editora:  {{b.publishing_company}}<br/>
-            </div>
-                      
-          </div>
-          <div class="mdl-card__actions mdl-card--border">
-            <a href="#" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Excluir</a>
-            <a href="#" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Alterar</a>
-          </div>
-        </div>
-      </section>
+
+    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+        <thead>
+          <tr>
+            <th class="mdl-data-table__cell--non-numeric">Nome do Livro</th>
+            <th>Autor</th>
+            <th>Assunto</th>
+            <th>Ano</th>
+            <th>Edição</th>
+            <th>Editora</th>
+          </tr>
+        </thead>
+        {% for b in bl %}
+        <tbody>
+          <tr>
+            <td class="mdl-data-table__cell--non-numeric">{{b.name_book}}</td>
+            <td>{{b.author_book}}</td>
+            <td>{{b.subject_matter}}</td>
+            <td>{{b.year}}</td>
+            <td>{{b.edition}}</td>
+            <td>{{b.publishing_company}}</td>
+            <td>
+              <button class="mdl-button mdl-js-button mdl-button--icon">
+                <i class="material-icons">edit</i>
+              </button>
+              </td>
+          </tr>
+        </tbody>
       {% endfor %}
      
     {% endblock %}
