@@ -2,7 +2,7 @@
 {% load staticfiles %}
     {% block corpo %}
     <div class="mdl-grid">
-        <div class="mdl-cell mdl-cell--12-col">
+        <div class="mdl-cellmdl-cell--4-col mdl-cell--2-offset mdl-shadow--2dp">
             <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
                 <thead>
                   <tr>
@@ -12,7 +12,6 @@
                     <th>Ano</th>
                     <th>Edição</th>
                     <th>Editora</th>
-                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -25,7 +24,10 @@
                     <td>{{b.edition}}</td>
                     <td>{{b.publishing_company}}</td>
                     <td>
-                      <button class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">edit</i></button>
+                        <button class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">edit</i></button>
+                      </td>
+                    <td>
+                      <button class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">delete</i></button>
                     </td>
                   </tr>
                 {% endfor %}
