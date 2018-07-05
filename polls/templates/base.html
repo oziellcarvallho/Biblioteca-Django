@@ -52,49 +52,45 @@
     <link rel="stylesheet" href="{% static 'assets/css/material.min.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/card.css' %}" />
 
-    <style>
-      .demo-layout-transparent {
-        background: url(https://lh4.googleusercontent.com/-XplyTa1Za-I/VMSgIyAYkHI/AAAAAAAADxM/oL-rD6VP4ts/w1184-h666/Android-Lollipop-wallpapers-Google-Now-Wallpaper-2.png) center / cover;
-      }
-      .demo-layout-transparent .mdl-layout__header,
-      .demo-layout-transparent .mdl-layout__drawer-button {
-        /* This background is dark, so we set text to white. Use 87% black instead if
-        your background is light. */
-        color: white;
-      }
-    </style>
   </head>
   <body>
-      <div class="demo-layout-transparent mdl-layout mdl-js-layout">
-          <header class="mdl-layout__header mdl-layout__header--transparent">
-            <div class="mdl-layout__header-row">
-              <!-- Title -->
-              <span class="mdl-layout-title">Online Library System</span>
-              <!-- Add spacer, to align navigation to the right -->
-              <div class="mdl-layout-spacer"></div>
-              <!-- Navigation -->
-              <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href="http://127.0.0.1:8000">Home</a>
-                <a class="mdl-navigation__link" href="http://127.0.0.1:8000/collection">Livros</a>
-                <a class="mdl-navigation__link" href="http://127.0.0.1:8000/contact">Contato</a>
-                <a class="mdl-navigation__link" href="http://127.0.0.1:8000/logout_view">Sair</a>
-              </nav>
-            </div>
-          </header>
-          <div class="mdl-layout__drawer">
-            <span class="mdl-layout-title">OLS</span>
-            <nav class="mdl-navigation">
-              <a class="mdl-navigation__link" href="">Realizar Empréstimo</a>
-              <a class="mdl-navigation__link" href=""><i class="material-icons">add</i> Cadastrar Aluno</a>
-              <a class="mdl-navigation__link" href="http://127.0.0.1:8000/registerbook"><i class="material-icons">add</i> Novo Livro</a>
-              <a class="mdl-navigation__link" href="">Link</a>
-            </nav>
-          </div>
-          <main class="mdl-layout__content">
-              {% block corpo %}
-              {% endblock %}
-          </main>
+    <div class="mdl-layout mdl-js-layout">
+      <header class="mdl-layout__header mdl-layout__header--scroll">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">Online Library System</span>
+          <div class="mdl-layout-spacer"></div>
+          <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="http://127.0.0.1:8000">Home</a>
+            <a class="mdl-navigation__link" href="http://127.0.0.1:8000/collection">Livros</a>
+            <a class="mdl-navigation__link" href="http://127.0.0.1:8000/contact">Contato</a>
+            <a class="mdl-navigation__link" href="http://127.0.0.1:8000/logout_view">Sair</a>
+          </nav>
         </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">OLS</span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="">Realizar Empréstimo</a>
+          <a class="mdl-navigation__link" href=""><i class="material-icons">add</i> Cadastrar Aluno</a>
+          <a class="mdl-navigation__link" href="http://127.0.0.1:8000/registerbook"><i class="material-icons">add</i> Novo Livro</a>
+          <a class="mdl-navigation__link" href="">Link</a>
+        </nav>
+      </div>
+      <main class="mdl-layout__content">
+            {% block corpo %}
+            {% endblock %}
+            <footer class="mdl-mini-footer">
+              <div class="mdl-mini-footer__left-section">
+                <div class="mdl-logo">Title</div>
+                <ul class="mdl-mini-footer__link-list">
+                  <li><a href="#">Help</a></li>
+                  <li><a href="#">Privacy & Terms</a></li>
+                </ul>
+              </div>
+            </footer>
+      </main>
+    </div>
+
       <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>        
   </body>
 </html>
