@@ -1,34 +1,36 @@
 {% extends "base.html" %} 
 {% load staticfiles %}
     {% block corpo %}
-
-    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-        <thead>
-          <tr>
-            <th class="mdl-data-table__cell--non-numeric">Nome do Livro</th>
-            <th>Autor</th>
-            <th>Assunto</th>
-            <th>Ano</th>
-            <th>Edição</th>
-            <th>Editora</th>
-          </tr>
-        </thead>
-        {% for b in bl %}
-        <tbody>
-          <tr>
-            <td class="mdl-data-table__cell--non-numeric">{{b.name_book}}</td>
-            <td>{{b.author_book}}</td>
-            <td>{{b.subject_matter}}</td>
-            <td>{{b.year}}</td>
-            <td>{{b.edition}}</td>
-            <td>{{b.publishing_company}}</td>
-            <td>
-              <button class="mdl-button mdl-js-button mdl-button--icon">
-                <i class="material-icons">edit</i>
-              </button>
-              </td>
-          </tr>
-        </tbody>
-      {% endfor %}
-     
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col">
+            <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+                <thead>
+                  <tr>
+                    <th class="mdl-data-table__cell--non-numeric">Nome</th>
+                    <th>Autor</th>
+                    <th>Assunto</th>
+                    <th>Ano</th>
+                    <th>Edição</th>
+                    <th>Editora</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                {% for b in bl %}
+                  <tr>
+                    <td class="mdl-data-table__cell--non-numeric">{{b.name_book}}</td>
+                    <td>{{b.author_book}}</td>
+                    <td>{{b.subject_matter}}</td>
+                    <td>{{b.year}}</td>
+                    <td>{{b.edition}}</td>
+                    <td>{{b.publishing_company}}</td>
+                    <td>
+                      <button class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">edit</i></button>
+                    </td>
+                  </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+      </div>            
     {% endblock %}
