@@ -85,23 +85,14 @@
             <span class="mdl-layout-title">OLS</span>
             <nav class="mdl-navigation">
               <a class="mdl-navigation__link" href="">Realizar Empréstimo</a>
-              <a class="mdl-navigation__link" href="">Cadastrar Aluno</a>
-              <a class="mdl-navigation__link" href="http://127.0.0.1:8000/registerbook">Novo Livro</a>
+              <a class="mdl-navigation__link" href=""><i class="material-icons">add</i> Cadastrar Aluno</a>
+              <a class="mdl-navigation__link" href="http://127.0.0.1:8000/registerbook"><i class="material-icons">add</i> Novo Livro</a>
               <a class="mdl-navigation__link" href="">Link</a>
             </nav>
           </div>
           <main class="mdl-layout__content">
               {% block corpo %}
               {% endblock %}
-              <footer class="mdl-mini-footer">
-                <div class="mdl-mini-footer__left-section">
-                  <div class="mdl-logo">Title</div>
-                  <ul class="mdl-mini-footer__link-list">
-                    <li><a href="#">Help</a></li>
-                    <li><a href="#">Privacy & Terms</a></li>
-                  </ul>
-                </div>
-              </footer>              
           </main>
         </div>
       <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>        
