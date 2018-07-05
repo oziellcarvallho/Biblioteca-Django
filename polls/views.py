@@ -107,7 +107,14 @@ class CriarLivro(View):
                     edition=dados_form['edition'],
                     publishing_company=dados_form['publishing_company'],
                     )
-        book.save()
+        if len(book.author_book) < 2 and len(book.edition) < 2 and len(book.name_book) < 2 and len(book.publishing_company) < 2 and len(book.subject_matter) < 2 and len(book.year) < 2:
+            messages.warning(request, 'Por favor, preencha todos os campos!"')
+
+        elif len(book.author_book) < 2 or len(book.author_book) > 50:
+            messages.warning(request, 'Verifique o campo "Nome do Livro"')
+        else:
+            book.save()
+        
         return render(request, self.template_name)
 
 def logout_view(request):
